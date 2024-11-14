@@ -16,8 +16,8 @@ export default function InterviewPage() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ userResponse }),
     });
-    console.log("User response:", userResponse); // Log the user response
-    console.log("Fetch response:", response); // Log the entire response
+    console.log("User response:", userResponse); //  the user response
+    console.log("Fetch response:", response); //  the entire response
 
     if (response.ok) {
       const data = await response.json();

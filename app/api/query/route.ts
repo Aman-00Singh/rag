@@ -1,4 +1,4 @@
-// app/api/query/route.ts
+
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getResponseForUserAnswer } from '../../../lib/pdfProcessor';
