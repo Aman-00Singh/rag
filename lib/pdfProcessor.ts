@@ -11,7 +11,11 @@ dotenv.config();
 Settings.llm = new OpenAI({
   model: 'gpt-4o',
   temperature: 0.7,
-  apiKey: process.env.OPENAI_API_KEY, // Make sure the environment variable is set
+  apiKey: process.env.OPENAI_API_KEY || "",
+  azure: {
+    endpoint: process.env.AZURE_OPENAI_RESOURCE_NAME || "",
+    deployment: process.env.AZURE_DEPLOYMENT_NAME || "" // Make sure the environment variable is set
+  }
 });
 
 /**
