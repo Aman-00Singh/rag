@@ -60,7 +60,8 @@ export async function initializeQueryEngine() {
 
   // Create and index the document
   const index = await VectorStoreIndex.fromDocuments([document]);
-  return index.asQueryEngine();
+  const retriever = index.asRetriever();
+  return index.asQueryEngine({ retriever });
 }
 
 
