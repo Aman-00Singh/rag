@@ -21,12 +21,32 @@ Settings.llm = new OpenAI({
 /**
  * Load and parse the PDF file
  */
+
+// --previous wala
+// async function loadPDF(): Promise<string> {
+//   const pdfPath = path.join(process.cwd(), 'public', 'documents', 'questions.pdf');
+//    console.log("PDF Path:", pdfPath);
+//   const pdfBuffer = fs.readFileSync(pdfPath);
+//   const data = await pdfParse(pdfBuffer);
+//   return data.text;
+// }
+
 async function loadPDF(): Promise<string> {
-  const pdfPath = path.join(process.cwd(), 'public', 'documents', 'questions.pdf');
-   console.log("PDF Path:", pdfPath);
-  const pdfBuffer = fs.readFileSync(pdfPath);
-  const data = await pdfParse(pdfBuffer);
-  return data.text;
+  try {
+    const pdfPath = path.join(process.cwd(), 'public', 'documents', 'questions.pdf');
+    console.log("PDF Path:", pdfPath);
+
+    if (!fs.existsSync(pdfPath)) {
+      throw new Error(`PDF file not found at path: ${pdfPath}`);
+    }
+
+    const pdfBuffer = fs.readFileSync(pdfPath);
+    const data = await pdfParse(pdfBuffer);
+    return data.text;
+  } catch (error) {
+    console.error("Error loading PDF:", error);
+    throw error;
+  }
 }
 
 /**
