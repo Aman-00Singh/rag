@@ -11,7 +11,7 @@ dotenv.config();
 Settings.llm = new OpenAI({
   model: 'gpt4o',
   temperature: 0.7,
-  apiKey: process.env.OPENAI_API_KEY || "",
+  apiKey: process.env.AZURE_OPENAI_KEY || "",
   
 });
 
@@ -82,7 +82,7 @@ export async function getResponseForUserAnswer(
   const queryEngine = await initializeQueryEngine();
 
   // Query for feedback from the LLM
-  
+
   const feedbackQuery = `Based on the user's answer: "${userResponse}", provide constructive feedback.`;
   const feedbackResult: any = await queryEngine.query({ query: feedbackQuery });
   const feedback = feedbackResult.response.trim() || 'No feedback available.';
