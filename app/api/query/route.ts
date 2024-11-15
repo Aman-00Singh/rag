@@ -1,7 +1,7 @@
 "use server"
 
 import { NextRequest, NextResponse } from 'next/server';
-import { getResponseForUserAnswer } from '../../../lib/pdfProcessor';
+import { getResponseForUserAnswer } from '../../lib/pdfProcessor';
 
 
 export async function POST(request: NextRequest) {

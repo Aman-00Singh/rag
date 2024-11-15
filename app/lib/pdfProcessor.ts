@@ -38,7 +38,7 @@ async function loadPDF(): Promise<string> {
 
   // Index the PDF content and create a query engine
  
-export async function initializeQueryEngine() {
+async function initializeQueryEngine() {
   const pdfText = await loadPDF();
 
   // Create a Document object with PDF content
@@ -51,25 +51,7 @@ export async function initializeQueryEngine() {
 }
 
 
-// --previous not dynamic
-// /**
-//  * Query the document and retrieve feedback and next question
-//  */
-// export async function getResponseForUserAnswer(
-//   userResponse: string
-// ): Promise<{ feedback: string; nextQuestion: string }> {
-//   const queryEngine = await initializeQueryEngine();
 
-//   const query = `Based on the user's answer: "${userResponse}", provide constructive feedback and suggest the next question. Ensure the next question is relevant and similar to the user's response context.`;
-
-//   const result: any = await queryEngine.query({ query });
-
-//   const feedback = result.response.trim() || 'No feedback available.';
- 
-//   const nextQuestion = 'Next question based on similarity and PDF content.';
-
-//   return { feedback, nextQuestion };
-// }
 
 
 
