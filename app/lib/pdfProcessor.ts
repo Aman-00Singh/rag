@@ -59,7 +59,7 @@ async function initializeQueryEngine() {
  
 export async function getResponseForUserAnswer(
   userResponse: string
-): Promise<{ feedback: string; nextQuestion: string }> {
+): Promise<{ feedback: string , nextQuestion: string }> {
 
   const queryEngine = await initializeQueryEngine();
 
