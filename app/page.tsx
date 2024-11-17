@@ -7,7 +7,7 @@ import { useState } from 'react';
 export default function InterviewPage() {
   const [userResponse, setUserResponse] = useState('');
   const [feedback, setFeedback] = useState('');
-  const [nextQuestion, setNextQuestion] = useState('Start by answering the first question.');
+  const [nextQuestion, setNextQuestion] = useState('Hi! Thank you for joining today’s interview. Before we dive into technical questions, let’s start with a quick introduction. Could you please share your name, and give me a brief overview of your experience in frontend development? I’d love to hear about any roles or projects you have worked on, along with any specific frameworks or tools you specialize in.');
 
   async function handleUserResponse() {
   try {
